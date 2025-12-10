@@ -2,84 +2,88 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrantes</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menú Menú 2025</title>
+
+    <!-- Fuentes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div>
-        <img src="images/entrantes.png" alt="entrantes" class="imagen_difuminada" id="img_entrantes">
-        <div id="div_p1">
-            <p>Entrante 1</p>
-            <p>Perfectamente alineada, distancia entre hojas medida con regla.
-                Incluye: saludo oficial, orden de precedencias y cero alimentos reales.
+    <!-- Fondo Fijo -->
+    <div id="fixedBackground"></div>
+
+    <!-- Nieve -->
+    <canvas id="snowCanvas"></canvas>
+
+    <!-- Contenedor Principal -->
+    <div class="card-container" id="mainCard">
+        <!-- Barra de Progreso -->
+        <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Cabecera -->
+        <div class="header">
+            <div class="badge">Dessarrollo Web 2025</div>
+            <h1>Menú Navideño</h1>
+            <p class="subtitle">Descifra el Menú</p>
+            <div style="
+                    height: 1px;
+                    width: 80%;
+                    background: linear-gradient(
+                        90deg,
+                        transparent,
+                        rgba(255, 255, 255, 0.2),
+                        transparent
+                    );
+                    margin: 0 auto;
+                "></div>
+        </div>
+
+        <!-- Área de Juego -->
+        <div class="content-area" id="gameArea">
+            <!-- Se inyecta con JS -->
+        </div>
+
+        <!-- Pantalla Final (Resumen) -->
+        <div class="content-area final-screen" id="finalArea">
+            <h2 class="final-title">¡Felicidades!</h2>
+            <div class="final-score">100%</div>
+            <p class="final-subtitle">
+                Todos los entrantes han sido tramitados correctamente.
             </p>
-            <form action="#" method="post" id="form_entrantes1">
-                <input type="radio" id="respuesta1" name="entrante" value="respuesta1">
-                <label for="respuesta1">Lasaña de Gestión Avanzada de la Información</label><br>
-
-                <input type="radio" id="respuesta2" name="entrante" value="respuesta2">
-                <label for="respuesta2">Ensalada de Protocolo con Etiqueta al Punto</label><br>
-
-                <input type="radio" id="respuesta3" name="entrante" value="respuesta3">
-                <label for="respuesta3">Pincho de Contabilidad</label><br>
-
-                <input type="radio" id="respuesta4" name="entrante" value="respuesta4">
-                <label for="respuesta4">Pincho de Organización de Eventos Empresariales</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta1')">Enviar respuesta</button>
-            </form>
-
-        </div>
-        <div id="div_p2" style="display: none">
-            <p>Entrante 2</p>
-            <p>Planificado, calendarizado, enviado por email, aprobado por tres departamentos…
-               y cancelado a última hora como todo buen evento
+            <p style="
+                    color: var(--gold-primary);
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    text-align: left;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+                    letter-spacing: 1px;
+                ">
+                Menú Oficial de Entrantes:
             </p>
-            <form action="#" method="post" id="form_entrantes2">
-                <input type="radio" id="respuesta5" name="entrante" value="respuesta5">
-                <label for="respuesta5">Lasaña de Gestión Avanzada de la Información</label><br>
-
-                <input type="radio" id="respuesta6" name="entrante" value="respuesta6">
-                <label for="respuesta6">Ensalada de Protocolo con Etiqueta al Punto</label><br>
-
-                <input type="radio" id="respuesta7" name="entrante" value="respuesta7">
-                <label for="respuesta7">Pincho de Contabilidad</label><br>
-
-                <input type="radio" id="respuesta8" name="entrante" value="respuesta8">
-                <label for="respuesta8">Pincho de Organización de Eventos Empresariales</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta2')">Enviar respuesta</button>
-            </form>
-
+            <div class="summary-list" id="summaryList">
+                <!-- Se llena dinámicamente con los platos reales -->
+            </div>
+            <a href="principales.html" class="action-btn">
+                SIGUIENTE: LOS PRINCIPALES ➜
+            </a>
         </div>
-        <div id="div_p3" style="display: none">
-            <p>Entrante 3</p>
-            <p>Crujiente mezcla de asientos, balances y ese sabor clásico a “¿Por qué no me cuadra un céntimo?”
-            </p>
-            <form action="#" method="post" id="form_entrantes3">
-                <input type="radio" id="respuesta9" name="entrante" value="respuesta9">
-                <label for="respuesta9">Lasaña de Gestión Avanzada de la Información</label><br>
 
-                <input type="radio" id="respuesta10" name="entrante" value="respuesta10">
-                <label for="respuesta10">Ensalada de Protocolo con Etiqueta al Punto</label><br>
-
-                <input type="radio" id="respuesta11" name="entrante" value="respuesta11">
-                <label for="respuesta11">Pincho de Contabilidad</label><br>
-
-                <input type="radio" id="respuesta12" name="entrante" value="respuesta12">
-                <label for="respuesta12">Pincho de Organización de Eventos Empresariales</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta3')">Enviar respuesta</button>
-            </form>
-        </div>
-        <div id="div_continuar"  style="display: none">
-            <a href="principales.html" class="boton">Continuar</a>
-        </div>
+        <div id="stamp" class="stamp-animation">CORRECTO</div>
     </div>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="js/logicaEntrantes.js"></script>
 </body>
 
 </html>

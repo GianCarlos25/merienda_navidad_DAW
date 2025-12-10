@@ -2,62 +2,75 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Postres</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menú Postres 2025</title>
+    <!-- Fuentes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div>
-        <img src="images/postres.png" alt="postres" class="imagen_difuminada" id="img_postres">
-        <div id="div_p1">
-            <p>Postre 1</p>
-            <p>Dulce mezcla internacional con vocabulario suave, expresiones deliciosas y un toque de pronunciación “aprobadita”.
-            </p>
-            <form action="#" method="post" id="form_postres1">
-                <input type="radio" id="resp_postre1" name="entrante" value="resp_postre1">
-                <label for="resp_postre1">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
 
-                <input type="radio" id="resp_postre2" name="entrante" value="resp_postre2">
-                <label for="resp_postre2">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+    <!-- Fondo Fijo -->
+    <div id="fixedBackground"></div>
 
-                <input type="radio" id="resp_postre3" name="entrante" value="resp_postre3">
-                <label for="resp_postre3">Tarta Lingüística de Francés e Inglés</label><br>
+    <!-- Nieve -->
+    <canvas id="snowCanvas"></canvas>
 
-                <input type="radio" id="resp_postre4" name="entrante" value="resp_postre4">
-                <label for="resp_postre4">Flan de Itinerario Personal para la Empleabilidad</label><br>
+    <!-- Contenedor Principal -->
+    <div class="card-container" id="mainCard">
 
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta7')">Enviar respuesta</button>
-            </form>
-
+        <!-- Barra de Progreso -->
+        <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
         </div>
-        <div id="div_p2" style="display: none">
-            <p>Postre 2</p>
-            <p>Suave, motivador y lleno de futuro… pero servido con la típica pregunta: “¿Y tú qué quieres hacer con tu vida?”
-            </p>
-            <form action="#" method="post" id="form_postres2">
-                <input type="radio" id="resp_postre5" name="entrante" value="resp_postre5">
-                <label for="resp_postre5">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
 
-                <input type="radio" id="resp_postre6" name="entrante" value="resp_postre6">
-                <label for="resp_postre6">Café de Digitalización Aplicada al Sistema Productivo</label><br>
-
-                <input type="radio" id="resp_postre7" name="entrante" value="resp_postre7">
-                <label for="resp_postre7">Tarta Lingüística de Francés e Inglés</label><br>
-
-                <input type="radio" id="resp_postre8" name="entrante" value="resp_postre8">
-                <label for="resp_postre8">Flan de Itinerario Personal para la Empleabilidad</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta8')">Enviar respuesta</button>
-            </form>
-
+        <!-- Cabecera -->
+        <div class="header">
+            <div class="badge">Dessarrollo Web 2025</div>
+            <h1>Menú Navideño</h1>
+            <p class="subtitle">Menú: Postres</p>
+            <div
+                style="height: 1px; width: 80%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); margin: 0 auto;">
+            </div>
         </div>
-        <div id="div_continuar"  style="display: none">
-            <a href="bebidas.html" class="boton">Continuar</a>
+
+        <!-- Área de Juego -->
+        <div class="content-area" id="gameArea">
+            <!-- Se inyecta con JS -->
         </div>
+
+        <!-- Pantalla Final (Resumen) -->
+        <div class="content-area final-screen" id="finalArea">
+            <h2 class="final-title">¡Felicidades!</h2>
+            <div class="final-score">100%</div>
+            <p class="final-subtitle">Has desbloqueado el momento más dulce del evento.</p>
+
+            <p
+                style="color: var(--gold-primary); font-weight: bold; margin-bottom: 10px; text-align: left; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">
+                Menú Oficial de Postres:</p>
+
+            <div class="summary-list" id="summaryList">
+                <!-- Se llena dinámicamente con los platos reales -->
+            </div>
+
+            <a href="bebidas.html" class="action-btn">
+                SIGUIENTE: BEBIDAS ➜
+            </a>
+        </div>
+
+        <!-- Sello de Feedback -->
+        <div id="stamp" class="stamp-animation">CORRECTO</div>
+
     </div>
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="js/logicaPostres.js"></script>
 </body>
 
 </html>

@@ -2,106 +2,76 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bebidas</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menú Bebidas 2025</title>
+    <!-- Fuentes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div>
-        <img src="images/bebidas.png" alt="bebidas" class="imagen_difuminada" id="img_bebidas">
-        <div id="div_p1">
-            <p>Bebida 1</p>
-            <p>Intenso, moderno y servido en una taza con QR que nadie consigue escanear.
-             Ideal para despertarte… si el WiFi colabora.
-            </p>
-            <form action="#" method="post" id="form_bebida1">
-                <input type="radio" id="resp_bebida1" name="entrante" value="resp_bebida1">
-                <label for="resp_bebida1">Té de Gestión de Recursos Humanos</label><br>
 
-                <input type="radio" id="resp_bebida2" name="entrante" value="resp_bebida2">
-                <label for="resp_bebida2">Malteada de Desarrollo de Aplicaciones Multiplataforma</label><br>
+    <!-- Fondo Fijo -->
+    <div id="fixedBackground"></div>
 
-                <input type="radio" id="resp_bebida3" name="entrante" value="resp_bebida3">
-                <label for="resp_bebida3">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+    <!-- Nieve -->
+    <canvas id="snowCanvas"></canvas>
 
-                <input type="radio" id="resp_bebida4" name="entrante" value="resp_bebida4">
-                <label for="resp_bebida4">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+    <!-- Contenedor Principal -->
+    <div class="card-container" id="mainCard">
 
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta9')">Enviar respuesta</button>
-            </form>
-
+        <!-- Barra de Progreso -->
+        <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
         </div>
-        <div id="div_p2" style="display: none">
-            <p>Bebida 2</p>
-            <p>Fresca, con huella de carbono cero y sabor eco-friendly.
-                Perfecta para beber despacio y reciclar con responsabilidad.
-            </p>
-            <form action="#" method="post" id="form_bebida2">
-                <input type="radio" id="resp_bebida5" name="entrante" value="resp_bebida5">
-                <label for="resp_bebida5">Té de Gestión de Recursos Humanos</label><br>
 
-                <input type="radio" id="resp_bebida6" name="entrante" value="resp_bebida6">
-                <label for="resp_bebida6">Malteada de Desarrollo de Aplicaciones Multiplataforma</label><br>
-
-                <input type="radio" id="resp_bebida7" name="entrante" value="resp_bebida7">
-                <label for="resp_bebida7">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
-
-                <input type="radio" id="resp_bebida8" name="entrante" value="resp_bebida8">
-                <label for="resp_bebida8">Café de Digitalización Aplicada al Sistema Productivo</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta10')">Enviar respuesta</button>
-            </form>
-
+        <!-- Cabecera -->
+        <div class="header">
+            <div class="badge">Dessarrollo Web 2025</div>
+            <h1>Menú Navideño</h1>
+            <p class="subtitle">Menu: Bebidas</p>
+            <div
+                style="height: 1px; width: 80%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); margin: 0 auto;">
+            </div>
         </div>
-        <div id="div_p3" style="display: none">
-            <p>Bebida 3</p>
-            <p>Batido adaptable a cualquier vaso, copa o recipiente.
-               Cambia de sabor según el sistema operativo donde la bebas.
-            </p>
-            <form action="#" method="post" id="form_bebida3">
-                <input type="radio" id="resp_bebida9" name="entrante" value="resp_bebida9">
-                <label for="resp_bebida9">Té de Gestión de Recursos Humanos</label><br>
 
-                <input type="radio" id="resp_bebida10" name="entrante" value="resp_bebida10">
-                <label for="resp_bebida10">Malteada de Desarrollo de Aplicaciones Multiplataformao</label><br>
-
-                <input type="radio" id="resp_bebida11" name="entrante" value="resp_bebida11">
-                <label for="resp_bebida11">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
-
-                <input type="radio" id="resp_bebida12" name="entrante" value="resp_bebida12">
-                <label for="resp_bebida12">Café de Digitalización Aplicada al Sistema Productivo</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta11')">Enviar respuesta</button>
-            </form>
+        <!-- Área de Juego -->
+        <div class="content-area" id="gameArea">
+            <!-- Se inyecta con JS -->
         </div>
-        <div id="div_p4" style="display: none">
-            <p>Bebida 4</p>
-            <p>Suave, cálido y perfectamente infundido.
-                Viene con una galleta en forma de “evaluación del desempeño”.
-            </p>
-            <form action="#" method="post" id="form_bebida4">
-                <input type="radio" id="resp_bebida9" name="entrante" value="resp_bebida9">
-                <label for="resp_bebida9">Té de Gestión de Recursos Humanos</label><br>
 
-                <input type="radio" id="resp_bebida10" name="entrante" value="resp_bebida10">
-                <label for="resp_bebida10">Malteada de Desarrollo de Aplicaciones Multiplataformao</label><br>
+        <!-- Pantalla Final (Resumen) -->
+        <div class="content-area final-screen" id="finalArea">
+            <h2 class="final-title">¡Felicidades!</h2>
+            <div class="final-score">100%</div>
+            <p class="final-subtitle">Has completado el expediente de bebidas con éxito.</p>
 
-                <input type="radio" id="resp_bebida11" name="entrante" value="resp_bebida11">
-                <label for="resp_bebida11">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+            <p
+                style="color: var(--gold-primary); font-weight: bold; margin-bottom: 10px; text-align: left; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">
+                Carta Oficial de Bebidas:</p>
 
-                <input type="radio" id="resp_bebida12" name="entrante" value="resp_bebida12">
-                <label for="resp_bebida12">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+            <div class="summary-list" id="summaryList">
+                <!-- Se llena dinámicamente con los platos reales -->
+            </div>
 
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta12')">Enviar respuesta</button>
-            </form>
+            <a href="fin.html" class="action-btn">
+                FINALIZAR TRÁMITE ➜
+            </a>
         </div>
-        <div id="div_continuar"  style="display: none">
-            <a href="fin.html" class="boton">Continuar</a>
-        </div>
+
+        <!-- Sello de Feedback -->
+        <div id="stamp" class="stamp-animation">CORRECTO</div>
+
     </div>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="js/logicaBebidas.js"></script>
 </body>
 
 </html>

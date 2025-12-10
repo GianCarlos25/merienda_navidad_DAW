@@ -2,21 +2,364 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merienda Navideña</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script src="js/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Merienda Navideña 2025</title>
+
+  <!-- Configuración Móvil -->
+  <meta name="theme-color" content="#022c22">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Fuentes Premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <!-- Estilos CSS -->
+
+  <style>
+    :root {
+      --bg-dark: #022c22;
+      --gold-primary: #d4af37;
+      --gold-shine: #fcf6ba;
+      --gold-shadow: #aa771c;
+      --paper-white: #f0fdf4;
+      --text-dark: #062c26;
+      /* Gradiente mejorado para efecto metálico */
+      --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      background-color: var(--bg-dark);
+      height: 100%;
+    }
+
+    #fixedBackground {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 50% 0%, #115e59 0%, var(--bg-dark) 80%);
+      z-index: -5;
+    }
+
+    #snowCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -4;
+      opacity: 0.5;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--paper-white);
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      overscroll-behavior-y: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* --- CONTENEDOR DE TARJETA --- */
+    .hero-card {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 450px;
+      background: rgba(6, 78, 59, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.7);
+      padding: 40px 25px;
+      text-align: center;
+      border-top: 4px solid var(--gold-primary);
+      border-bottom: 4px solid var(--gold-primary);
+
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInSimple 1s ease forwards;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      /* Para salida suave */
+    }
+
+    /* Clase para la animación de salida */
+    .hero-card.exiting {
+      opacity: 0;
+      transform: translateY(-30px) scale(0.95);
+    }
+
+    @keyframes fadeInSimple {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-icon {
+      color: var(--gold-primary);
+      margin-bottom: 15px;
+      opacity: 0;
+      animation: fadeText 0.8s ease 0.2s forwards;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--gold-primary);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold-primary);
+      margin-bottom: 20px;
+    }
+
+    .titulo {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      line-height: 1.1;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .titulo span {
+      display: block;
+      opacity: 0;
+      animation: fadeText 0.8s ease forwards;
+    }
+
+    .titulo span:nth-child(1) {
+      animation-delay: 0.3s;
+    }
+
+    .titulo span:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .titulo span:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+
+    .titulo span:last-child {
+      font-size: 3.5rem;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-top: 5px;
+      /* Sombra mejorada para legibilidad */
+      text-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes fadeText {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .subtitulo {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #d1fae5;
+      margin-bottom: 30px;
+      font-weight: 300;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 0;
+      opacity: 0;
+      animation: fadeText 1s ease 1s forwards;
+    }
+
+    .boton {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      background: var(--gold-gradient);
+      border: none;
+      border-radius: 50px;
+      color: #3f2e00;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      box-shadow: 0 4px 30px rgba(212, 175, 55, 0.4);
+      transition: transform 0.1s, box-shadow 0.1s;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeText 0.8s ease 1.2s forwards, pulseGold 3s infinite 2s;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .boton::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+      transform: rotate(45deg);
+      animation: shimmer 3s infinite;
+    }
+
+    .boton:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 10px rgba(212, 175, 55, 0.6);
+    }
+
+    @keyframes pulseGold {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 4px 30px rgba(212, 175, 55, 0.4);
+      }
+
+      50% {
+        transform: scale(1.03);
+        box-shadow: 0 10px 40px rgba(212, 175, 55, 0.6);
+      }
+
+      100% {
+        transform: scale(1);
+        box-shadow: 0 4px 30px rgba(212, 175, 55, 0.4);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%) rotate(45deg);
+      }
+
+      100% {
+        transform: translateX(100%) rotate(45deg);
+      }
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      z-index: 5;
+    }
+
+    .sparkle {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      background: var(--gold-primary);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      animation: fadeOutSparkle 0.8s forwards;
+      box-shadow: 0 0 10px var(--gold-shine);
+    }
+
+    @keyframes fadeOutSparkle {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0) translateY(20px);
+      }
+    }
+
+    @media (max-width: 370px) {
+      .hero-card {
+        padding: 30px 15px;
+      }
+
+      .titulo {
+        font-size: 2rem;
+      }
+
+      .titulo span:last-child {
+        font-size: 2.8rem;
+      }
+
+      .subtitulo {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div>
-        <img src="images/merienda_navidenya_2025.png" alt="Merienda Navideña">
 
-        <p>Si el menú de la merienda deseas conocer,<br>
-            las siguientes adivinanzas tendrás que resolver</p>
-        <a href="entrantes.html" class="boton">Comenzar</a>
+  <!-- Fondo Fijo -->
+  <div id="fixedBackground"></div>
+
+  <!-- Nieve -->
+  <canvas id="snowCanvas"></canvas>
+
+  <main class="hero-card" id="mainCard" role="main">
+    <div class="hero-icon" aria-hidden="true">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
+        </path>
+      </svg>
     </div>
+
+    <div class="badge">Expediente</div>
+
+    <h1 class="titulo">
+      <span>Merienda</span>
+      <span>Navideña</span>
+      <span>2025</span>
+    </h1>
+
+    <p class="subtitulo">
+      Si el menú de la merienda quieres conocer,<br>
+      algunas divertidas adivinanzas tendrás que resolver.
+    </p>
+
+    <!-- Usamos un id para el botón para controlarlo con JS -->
+    <a href="entrantes.html" id="startBtn" class="boton" aria-label="Comenzar el juego de la merienda">Comenzar</a>
+  </main>
+
+  <footer class="footer">
+    Departamento de Festejos
+  </footer>
+  <script src="js/logicaIndex.js"></script>
+
 </body>
 
 </html>

@@ -2,84 +2,75 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principales</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menú Principales 2025</title>
+    <!-- Fuentes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div>
-        <img src="images/principales.png" alt="principales" class="imagen_difuminada" id="img_principales">
-        <div id="div_p1">
-            <p>Principal 1</p>
-            <p>Capas infinitas de documentos, PDFs que nadie revisa y una salsa secreta llamada
-                "¿Pero dónde guardé este archivo?"
-            </p>
-            <form action="#" method="post" id="form_principales1">
-                <input type="radio" id="resp_prin1" name="entrante" value="resp_prin1">
-                <label for="resp_prin1">Estofado de Gestión Financiera</label><br>
 
-                <input type="radio" id="resp_prin2" name="entrante" value="resp_prin2">
-                <label for="resp_prin2">Lasaña de Gestión Avanzada de la Información</label><br>
+    <!-- Fondo Fijo -->
+    <div id="fixedBackground"></div>
 
-                <input type="radio" id="resp_prin3" name="entrante" value="resp_prin3">
-                <label for="resp_prin3">Linguini de Lenguaje de Marcas</label><br>
+    <!-- Nieve -->
+    <canvas id="snowCanvas"></canvas>
 
-                <input type="radio" id="resp_prin4" name="entrante" value="resp_prin4">
-                <label for="resp_prin4">Tarta Lingüística de Francés e Inglés</label><br>
+    <!-- Contenedor Principal -->
+    <div class="card-container" id="mainCard">
 
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta4')">Enviar respuesta</button>
-            </form>
-
+        <!-- Barra de Progreso -->
+        <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
         </div>
-        <div id="div_p2" style="display: none">
-            <p>Principal 2</p>
-            <p>Cocción lenta de presupuestos, gastos y previsiones,
-                servido con aroma a “este Excel pide clemencia”.
-            </p>
-            <form action="#" method="post" id="form_principales2">
-                <input type="radio" id="resp_prin5" name="entrante" value="resp_prin5">
-                <label for="resp_prin5">Estofado de Gestión Financiera</label><br>
 
-                <input type="radio" id="resp_prin6" name="entrante" value="resp_prin6">
-                <label for="resp_prin6">Lasaña de Gestión Avanzada de la Información</label><br>
-
-                <input type="radio" id="resp_prin7" name="entrante" value="resp_prin7">
-                <label for="resp_prin7">Linguini de Lenguaje de Marcas</label><br>
-
-                <input type="radio" id="resp_prin8" name="entrante" value="resp_prin8">
-                <label for="resp_prin8">Tarta Lingüística de Francés e Inglés</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta5')">Enviar respuesta</button>
-            </form>
-
+        <!-- Cabecera -->
+        <div class="header">
+            <div class="badge">Dessarrollo Web 2025</div>
+            <h1>Menú Navideño</h1>
+            <p class="subtitle">Menú: Platos Principales</p>
+            <div
+                style="height: 1px; width: 80%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); margin: 0 auto;">
+            </div>
         </div>
-        <div id="div_p3" style="display: none">
-            <p>Principal 3</p>
-            <p>Tiras de etiquetas perfectamente ordenadas, con un aliño suave de HTML que se rompe por un cierre mal puesto.
-            </p>
-            <form action="#" method="post" id="form_principales3">
-                <input type="radio" id="resp_prin9" name="entrante" value="resp_prin9">
-                <label for="resp_prin9">Estofado de Gestión Financiera</label><br>
 
-                <input type="radio" id="resp_prin10" name="entrante" value="resp_prin10">
-                <label for="resp_prin10">Lasaña de Gestión Avanzada de la Información</label><br>
-
-                <input type="radio" id="resp_prin11" name="entrante" value="resp_prin11">
-                <label for="resp_prin11">Linguini de Lenguaje de Marcas</label><br>
-
-                <input type="radio" id="resp_prin12" name="entrante" value="resp_prin12">
-                <label for="resp_prin12">Tarta Lingüística de Francés e Inglés</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta6')">Enviar respuesta</button>
-            </form>
+        <!-- Área de Juego -->
+        <div class="content-area" id="gameArea">
+            <!-- Se inyecta con JS -->
         </div>
-        <div id="div_continuar"  style="display: none">
-            <a href="postres.html" class="boton">Continuar</a>
+
+        <!-- Pantalla Final (Resumen) -->
+        <div class="content-area final-screen" id="finalArea">
+            <h2 class="final-title">¡Felicidades!</h2>
+            <div class="final-score">100%</div>
+            <p class="final-subtitle">Todos los platos principales han sido aprobados por intervención.</p>
+
+            <p
+                style="color: var(--gold-primary); font-weight: bold; margin-bottom: 10px; text-align: left; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">
+                Menú Oficial de Principales:</p>
+
+            <div class="summary-list" id="summaryList">
+                <!-- Se llena dinámicamente -->
+            </div>
+
+            <a href="postres.html" class="action-btn">
+                SIGUIENTE: LOS POSTRES ➜
+            </a>
         </div>
+
+        <!-- Sello de Feedback -->
+        <div id="stamp" class="stamp-animation">CORRECTO</div>
+
     </div>
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="js/logicaPrincipales.js"></script>
 </body>
 
 </html>

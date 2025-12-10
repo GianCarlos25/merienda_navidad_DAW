@@ -2,21 +2,172 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merienda</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Expediente Finalizado</title>
+    <!-- Fuentes Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <div>
-        <h1>Disfruta de la merienda</h1>
-        <img src="images/entrantes.png" alt="entrantes" id="img_entrantes">
-        <img src="images/principales.png" alt="principales" id="img_principales">
-        <img src="images/postres.png" alt="postres" id="img_postres">
-        <img src="images/bebidas.png" alt="bebidas" id="img_bebidas">
+
+    <!-- Fondo Fijo -->
+    <div id="fixedBackground"></div>
+
+    <!-- Nieve -->
+    <canvas id="snowCanvas"></canvas>
+
+    <!-- Contenedor Principal (El Expediente Completo) -->
+    <div class="card-container">
+
+        <div class="header">
+            <div class="badge">Menu Terminado</div>
+            <h1>Menú Navideño<br>2025</h1>
+            <p class="subtitle">Menu completado con éxito.</p>
+            <div style="height: 2px; width: 60px; background: var(--gold-gradient); margin: 0 auto;"></div>
+        </div>
+
+        <!-- SECCIÓN 1: ENTRANTES -->
+        <div class="menu-section">
+            <h2 class="section-title">I. Entrantes</h2>
+            <img src="images/entrantes/ensaladaProtocolo.jpg" alt="Entrantes" class="category-img">
+
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Ensalada de Protocolo con Etiqueta al Punto</h3>
+                    <p>Perfectamente alineada, distancia entre hojas medida con regla. Incluye: saludo oficial, orden de
+                        precedencias y cero alimentos reales.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Pincho de Organización de Eventos Empresariales</h3>
+                    <p>Planificado, calendarizado, enviado por email, aprobado por tres departamentos… y cancelado a
+                        última hora como todo buen evento.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Pincho de Contabilidad</h3>
+                    <p>Crujiente mezcla de asientos, balances y ese sabor clásico a “¿Por qué no me cuadra un céntimo?”
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: PRINCIPALES -->
+        <div class="menu-section">
+            <h2 class="section-title">II. Platos Principales</h2>
+            <img src="images/principales/estofado.jpg" alt="Principales" class="category-img">
+
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Lasaña de Gestión Avanzada de la Información</h3>
+                    <p>Láminas de pasta fresca intercaladas con auténtico ragú de carne y bechamel cremosa.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Estofado de Gestión Financiera</h3>
+                    <p>Cocción lenta de presupuestos, gastos y previsiones, servido con aroma a 'este Excel pide
+                        clemencia</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Linguini al Pesto Genovese</h3>
+                    <p>Tiras de etiquetas perfectamente ordenadas, con un aliño suave de HTML que se rompe por un cierre
+                        mal puesto.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: POSTRES -->
+        <div class="menu-section">
+            <h2 class="section-title">III. Postres</h2>
+            <img src="images/postres/tartaLingüística.png" alt="Postres" class="category-img">
+
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Tarta Lingüística de Francés e Inglés</h3>
+                    <p>Dulce mezcla internacional con vocabulario suave, expresiones deliciosas y un toque de
+                        pronunciación “aprobadita”.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Flan de Itinerario Personal para la Empleabilidad</h3>
+                    <p>Suave, motivador y lleno de futuro… pero servido con la típica pregunta: “¿Y tú qué quieres hacer
+                        con tu vida?”</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4: BEBIDAS -->
+        <div class="menu-section">
+            <h2 class="section-title">IV. Bebidas</h2>
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80"
+                alt="Bebidas" class="category-img">
+
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Café de Digitalización Aplicada al Sistema Productivo</h3>
+                    <p>Intenso, moderno y servido en una taza con QR que nadie consigue escanear. Ideal para
+                        despertarte… si el WiFi colabora.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Limonada de Sostenibilidad Aplicada al Sistema Productivo</h3>
+                    <p>Fresca, con huella de carbono cero y sabor eco-friendly. Perfecta para beber despacio y reciclar
+                        con responsabilidad.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Malteada de Desarrollo de Aplicaciones Multiplataforma</h3>
+                    <p>Batido adaptable a cualquier vaso, copa o recipiente. Cambia de sabor según el sistema operativo
+                        donde la bebas.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-icon">✦</div>
+                <div class="item-content">
+                    <h3>Té de Gestión de Recursos Humanos</h3>
+                    <p>Suave, cálido y perfectamente infundido. Viene con una galleta en forma de “evaluación del
+                        desempeño”.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CIERRE -->
+        <div class="final-message">
+            <p class="final-text">¡Disfruta de la Merienda!</p>
+            <p style="color: #a7f3d0; font-size: 0.9rem;">El menu ha sido completado correctamente.</p>
+
+            <a href="index.html" class="action-btn">Volver al Inicio</a>
+        </div>
+
     </div>
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="js/logicaFin.js"></script>
 </body>
 
 </html>
